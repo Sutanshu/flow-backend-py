@@ -14,9 +14,22 @@ def get_api():
     '''
     returns jsonified data, and a 200 status code
     '''
-    print(request)
-    return make_response(jsonify({'data': 'Hello World'}), 200)
-
+    data = {
+        'data':
+        [
+            {
+                'name': 'John Doe',
+                'age': 30,
+                'job': 'Software Engineer'
+            },
+            {
+                'name': 'Jane Doe',
+                'age': 25,
+                'job': 'Data Scientist'
+            }
+        ]
+    }
+    return make_response(jsonify(data), 200)
 
 # register the app
 if __name__ == '__main__':
